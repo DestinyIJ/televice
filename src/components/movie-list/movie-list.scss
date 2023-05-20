@@ -1,0 +1,13 @@
+@use '../../scss/' as  *;
+
+.movie-list {
+    .movie-card {
+        margin-right: 2rem;
+        width: 30vw;
+
+        @include mobile {
+            width: 50vw;
+            height: 70%;
+        }
+    }
+}

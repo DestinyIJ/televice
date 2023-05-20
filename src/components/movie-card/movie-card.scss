@@ -1,0 +1,55 @@
+@use '../../scss/' as *;
+
+.movie-card {
+    position: relative;
+    margin-bottom: 1rem; 
+
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: $border-radius;
+        
+
+        @include mobile {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $black;
+        opacity: 0;
+        transition: opacity .3 ease;
+        border-radius: $border-radius;
+        @include flex(column, center, center);
+        gap: 20px;
+
+        .btn {
+            height: 40px;
+            position: relative;
+            // @include flex(row, center, center);
+            // flex-wrap: wrap;
+
+            span {
+                margin-left: 12px;
+                display: none;
+            }
+
+            &:hover span {
+                display: block;
+            }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+   
+}
